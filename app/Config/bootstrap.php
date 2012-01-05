@@ -63,3 +63,7 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+
+App::uses('PhpReader', 'Configure');
+Configure::config('default', new PhpReader());
+Configure::load('ldap');

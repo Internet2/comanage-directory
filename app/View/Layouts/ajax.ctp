@@ -1,6 +1,6 @@
 <?php
 /**
- * COmanage Directory
+ * COmanage Directory AJAX Layout
  *
  * Copyright (C) 2011 University Corporation for Advanced Internet Development, Inc.
  * 
@@ -21,5 +21,21 @@
  * @license       Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  * @version       $Id$
  */
-
-require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
+?>
+<?php
+  $f = $this->Session->flash('error');
+  
+  if($f && $f != ""): ?>
+    <div class="ui-widget">
+      <div class="ui-state-error ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 
+        <p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+          <?php print $f; ?>
+        </p>
+      </div>
+    </div>
+<?php
+  else: {
+    print $content_for_layout;
+  }
+  endif;
+?>

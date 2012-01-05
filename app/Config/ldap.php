@@ -1,8 +1,8 @@
 <?php
 /**
- * COmanage Directory
+ * COmanage Directory LDAP Configuration
  *
- * Copyright (C) 2011 University Corporation for Advanced Internet Development, Inc.
+ * Copyright (C) 2011-12 University Corporation for Advanced Internet Development, Inc.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
@@ -14,12 +14,18 @@
  * KIND, either express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  *
- * @copyright     Copyright (C) 2011 University Corporation for Advanced Internet Development, Inc.
+ * @copyright     Copyright (C) 2011-12 University Corporation for Advanced Internet Development, Inc.
  * @link          http://www.internet2.edu/comanage COmanage Project
  * @package       directory
  * @since         COmanage Directory v0.1
  * @license       Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  * @version       $Id$
  */
-
-require 'webroot' . DIRECTORY_SEPARATOR . 'index.php';
+?>
+<?php
+  $config['Ldap'] = array(
+    'host'  => "your.ldap.server.edu",
+    'searchbase' => "dc=your,dc=domain,dc=edu",
+    'objectclass' => "person",
+    'protocol' => 3
+  );
