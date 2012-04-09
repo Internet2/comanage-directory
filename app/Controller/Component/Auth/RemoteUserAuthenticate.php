@@ -36,8 +36,10 @@ class RemoteUserAuthenticate extends BaseAuthenticate {
    */
   
   public function authenticate(CakeRequest $request, CakeResponse $response) {
-    $u = env('REMOTE_USER');
-    $u = "plee";
+    // Grab the authenticated user from the session (as set by webroot/auth/login/index.php).
+    // We don't seem to have access to the SessionComponent here, so just read it natively.
+    
+    $u = $_SESSION['Auth']['external']['user'];
     
     if(empty($u)) {
       return false;

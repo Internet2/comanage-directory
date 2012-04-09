@@ -67,6 +67,7 @@ class UsersController extends AppController {
   
   public function logout() {
     $this->Session->delete('Auth.User');
+    // XXX should redirect to /auth/logout/index.php to trip external logout
     $this->redirect("/");
   }
 }

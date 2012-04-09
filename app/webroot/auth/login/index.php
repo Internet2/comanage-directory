@@ -22,8 +22,11 @@
  * @version       $Id$
  */
 
+// So we don't have to put the entire app under .htaccess auth, we grab REMOTE_USER
+// and stuff it into the session so the auth component knows who we authenticated.
+
 // Since this page isn't part of the framework, we need to reconfigure
-// to access the Cake session
+// to access the Cake session.
 
 session_name("CAKEPHP");
 session_start();
